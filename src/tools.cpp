@@ -21,14 +21,14 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
   // check the validity of the following inputs:
   //  * the estimation vector size should not be zero
   //  * the estimation vector size should equal ground truth vector size
-  assert(estimations.size() != 0);
-  assert(estimations.size() == ground_truth.size()); 
+  //assert(estimations.size() != 0);
+  //assert(estimations.size() == ground_truth.size()); 
 
-  if (estimations.size() != 0){
+  if (estimations.size() == 0){
     cout << "the estimation vector size should not be zero";
     assert(estimations.size() != 0);
   }
-  if (estimations.size() == ground_truth.size()){
+  if (estimations.size() != ground_truth.size()){
     cout << "the estimation vector size should equal ground truth vector size";
     assert(estimations.size() == ground_truth.size()); 
   }
@@ -63,12 +63,12 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
   float c2 = sqrt(c1);
   float c3 = c1*c2;
 
-  // Check division by zero
+  // Check division by zero // It's done in FunctionEKF.cpp
   //assert(fabs(c1) < 0.0001);
-  if (fabs(c1) < 0.0001){
-    cout << "jacobian should not be divided by zero";
-    assert(fabs(c1) < 0.0001);
-  }
+  //if (fabs(c1) <= 0.0001){
+  //  cout << "jacobian should not be divided by zero";
+  //  assert(fabs(c1) > 0.0001);
+  //}
 
     // compute the Jacobian matrix
   Hj << (px/c2), (py/c2), 0, 0,

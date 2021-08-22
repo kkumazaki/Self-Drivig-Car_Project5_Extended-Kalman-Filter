@@ -1,7 +1,41 @@
 # Extended Kalman Filter Project Starter Code
 Self-Driving Car Engineer Nanodegree Program
+--
 
-In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower than the tolerance outlined in the project rubric. 
+In this project I utilized a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower than the tolerance outlined in the project rubric. 
+
+The result is shown below.  
+It achieved the target performance of RMSE in Project Rubric.  
+- RMSE_x = 0.0973 < 0.11   
+- RMSE_y = 0.0855 < 0.11  
+- RMSE_vx = 0.4656 < 0.52  
+- RMSE_vy = 0.4723 < 0.52  
+
+<img src="result/Default.png" width="480" alt="Combined Image" />
+
+Important sorce codes in this project are following:  
+
+(1) [main.cpp](https://github.com/kkumazaki/Self-Drivig-Car_Project5_Extended-Kalman-Filter/blob/master/src/main.cpp): (didn’t modify this file)
+-	Communicates with Term2 Simulator receiving data measurements.
+-	Calls the function to run Kalman Filter.
+-	Calls the function to calculate RMSE.
+
+(2) [FusionEKF.cpp](https://github.com/kkumazaki/Self-Drivig-Car_Project5_Extended-Kalman-Filter/blob/master/src/FusionEKF.cpp): 
+-	Initialize the filter.
+-	Calls the prediction function.
+-	Calls the update function.
+
+(3) [kalman_filter.cpp](https://github.com/kkumazaki/Self-Drivig-Car_Project5_Extended-Kalman-Filter/blob/master/src/kalman_filter.cpp):
+-	Define the prediction function.
+-	Define the update function for LiDAR and Radar.
+
+(4) [tools.cpp](https://github.com/kkumazaki/Self-Drivig-Car_Project5_Extended-Kalman-Filter/blob/master/src/tools.cpp):
+-	Calculate RMSE and Jacobian Matrix.
+
+I wrote down the details in the [writeup](https://github.com/kkumazaki/Self-Drivig-Car_Project5_Extended-Kalman-Filter/blob/master/Writeup_of_Lesson24.pdf).
+
+Environment Settings
+--
 
 This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases).
 

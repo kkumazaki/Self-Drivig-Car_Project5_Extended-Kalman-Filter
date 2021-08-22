@@ -178,7 +178,7 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
 
     // check the validity that px, py should not be zero 
     //assert(pxpy > 0.0001);
-    if (pxpy > 0.0001){
+    if (pxpy <= 0.0001){
       cout << "check the validity that px, py should not be zero ";
       assert(pxpy > 0.0001);
     }
